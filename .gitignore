@@ -35,3 +35,5 @@ build/
 *.crt
 serviceAccountKey.json
 firebase-service-account.json
+# Credenciales Firebase
+Backend/src/config/firebase-credentials.json
