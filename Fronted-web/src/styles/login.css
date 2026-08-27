@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────
+   GLOBAL
+───────────────────────────── */
+
+* {
+  box-sizing: border-box;
+}
+
+/* ─────────────────────────────
+   ROOT
+───────────────────────────── */
+
+.login-root {
+  font-family: 'DM Sans', sans-serif;
+
+  @apply min-h-screen
+  bg-white
+  flex
+  items-center
+  justify-center
+  p-6;
+}
+
+/* ─────────────────────────────
+   CARD
+───────────────────────────── */
+
+.login-card {
+  @apply flex
+  w-full
+  max-w-[1200px]
+  min-h-[620px]
+  rounded-[2.5rem]
+  overflow-hidden
+  bg-white;
+
+  box-shadow:
+    0 32px 80px rgba(15, 122, 67, 0.18),
+    0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* ─────────────────────────────
+   LEFT PANEL
+───────────────────────────── */
+
+.login-left {
+  position: relative;
+
+  @apply flex
+  flex-col
+  items-center
+  justify-center
+  overflow-hidden
+  text-white
+  px-10
+  py-12;
+
+  flex: 0 0 42%;
+
+  background:
+    linear-gradient(
+      155deg,
+      #0f7a43 0%,
+      #085c30 60%,
+      #063d20 100%
+    );
+}
+
+/* BLOBS */
+
+.blob-tl {
+  position: absolute;
+  top: -60px;
+  left: -60px;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.07);
+}
+
+.blob-br {
+  position: absolute;
+  bottom: -80px;
+  right: -70px;
+
+  width: 280px;
+  height: 280px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.06);
+}
+
+.blob-mid {
+  position: absolute;
+  bottom: 60px;
+  left: -50px;
+
+  width: 140px;
+  height: 140px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.05);
+}
+
+/* LOGO */
+
+.logo-box {
+  position: relative;
+  z-index: 2;
+
+  @apply mb-8;
+}
+
+.logo-img {
+  width: 260px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+/* TITLE */
+
+.login-title {
+  position: relative;
+  z-index: 2;
+
+  font-family: 'DM Serif Display', serif;
+
+  @apply text-[1.8rem]
+  text-center
+  leading-relaxed
+  max-w-[320px];
+}
+
+/* ─────────────────────────────
+   RIGHT PANEL
+───────────────────────────── */
+
+.login-right {
+  position: relative;
+
+  @apply flex-1
+  bg-white
+  px-12
+  py-14
+  flex
+  flex-col
+  justify-center;
+}
+
+.login-right::before {
+  content: '';
+
+  position: absolute;
+  top: -40px;
+  right: -40px;
+
+  width: 130px;
+  height: 130px;
+
+  border-radius: 50%;
+
+  background: #e8f7ef;
+
+  z-index: 0;
+}
+
+.login-right-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* HEADINGS */
+
+.login-heading {
+  font-family: 'DM Serif Display', serif;
+
+  @apply text-[2.8rem]
+  text-[#0f7a43]
+  mb-1;
+}
+
+.login-subtitle {
+  @apply text-[0.9rem]
+  text-[#9aab9f]
+  mb-8;
+}
+
+/* ERROR */
+
+.login-error {
+  @apply text-[0.8rem]
+  text-[#d94f4f]
+  bg-[#fdf0f0]
+  rounded-xl
+  px-4
+  py-3
+  mb-4
+  text-center;
+}
+
+/* ─────────────────────────────
+   INPUTS
+───────────────────────────── */
+
+.input-wrap {
+  position: relative;
+
+  @apply mb-4;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #6ab98a;
+}
+
+.input-wrap input {
+  width: 100%;
+
+  padding:
+    0.95rem
+    1rem
+    0.95rem
+    2.8rem;
+
+  border-radius: 999px;
+  border: none;
+
+  background: #d8f0e5;
+
+  font-size: 0.9rem;
+  color: #1a3d28;
+
+  outline: none;
+
+  transition: 0.2s ease;
+
+  font-family: 'DM Sans', sans-serif;
+}
+
+.input-wrap input::placeholder {
+  color: #7dbfa0;
+}
+
+.input-wrap input:focus {
+  background: #c5e9d7;
+
+  box-shadow:
+    0 0 0 3px rgba(15,122,67,0.14);
+}
+
+/* ─────────────────────────────
+   BUTTON
+───────────────────────────── */
+
+.btn-primary {
+  @apply w-full
+  py-4
+  rounded-full
+  text-black
+  text-sm
+  font-semibold
+  uppercase
+  tracking-[0.1em]
+  flex
+  items-center
+  justify-center
+  gap-2
+  mt-4;
+
+  border: none;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  background:
+    linear-gradient(
+      90deg,
+      #0f7a43,
+      #12a358
+    );
+
+  box-shadow:
+    0 6px 20px rgba(15,122,67,0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 28px rgba(15,122,67,0.35);
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+
+}
+
+/* ─────────────────────────────
+   RESPONSIVE
+───────────────────────────── */
+
+@media (max-width: 768px) {
+
+  .login-card {
+    @apply flex-col rounded-[2rem];
+  }
+
+  .login-left {
+    @apply px-8 py-10;
+  }
+
+  .logo-img {
+    width: 180px;
+  }
+
+  .login-title {
+    @apply text-[1.4rem];
+  }
+
+  .login-right {
+    @apply px-7 py-10;
+  }
+
+  .login-heading {
+    @apply text-[2rem];
+  }
+}
