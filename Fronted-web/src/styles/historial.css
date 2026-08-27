@@ -1,0 +1,350 @@
+/* historial.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────
+   CONTENEDOR
+───────────────────────────── */
+
+.historial-container {
+  @apply min-h-screen
+  bg-[#EEF5F1]
+  p-6;
+}
+
+/* ─────────────────────────────
+   HEADER
+───────────────────────────── */
+
+.historial-header {
+  @apply flex
+  items-center
+  justify-between
+  mb-8;
+}
+
+.historial-title-box {
+  @apply flex
+  items-center
+  gap-4;
+}
+
+
+
+.historial-title {
+  @apply text-4xl
+  font-bold
+  text-gray-800;
+}
+
+.historial-subtitle {
+  @apply text-gray-500
+  mt-1;
+}
+
+/* ─────────────────────────────
+   FILTROS
+───────────────────────────── */
+
+.historial-filtros {
+  @apply bg-white
+  rounded-[30px]
+  border
+  border-gray-200
+  shadow-sm
+  p-6
+  mb-8
+  flex
+  flex-wrap
+  gap-5
+  items-end;
+}
+
+.historial-input-group {
+  @apply flex
+  flex-col
+  gap-2;
+}
+
+.historial-input-group label {
+  @apply text-sm
+  font-semibold
+  text-gray-600
+  ml-1;
+}
+
+/* INPUT */
+
+.historial-input-icon {
+  @apply flex
+  items-center
+  gap-3
+  bg-[#F7FAF8]
+  border
+  border-gray-200
+  rounded-2xl
+  px-4
+  h-14
+  min-w-[240px]
+  transition-all
+  duration-300;
+}
+
+.historial-input-icon:hover {
+  @apply border-green-300;
+}
+
+.historial-input-icon:focus-within {
+  @apply ring-4
+  ring-green-100
+  border-green-400
+  bg-white;
+}
+
+.historial-input-icon svg {
+  @apply text-green-600;
+}
+
+.historial-input-icon input,
+.historial-input-icon select {
+  @apply bg-transparent
+  outline-none
+  w-full
+  text-sm
+  font-medium
+  text-gray-700;
+}
+
+/* ─────────────────────────────
+   DATE PICKER MODERNO
+───────────────────────────── */
+
+.historial-input-icon input[type="date"] {
+  @apply relative
+  w-full
+  bg-transparent
+  text-gray-700
+  font-medium
+  cursor-pointer;
+
+  color-scheme: light;
+}
+
+/* ocultar icono nativo */
+
+.historial-input-icon input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* texto */
+
+.historial-input-icon input[type="date"]::-webkit-datetime-edit {
+  color: #374151;
+  font-weight: 500;
+}
+
+/* focus */
+
+.historial-input-icon input[type="date"]:focus {
+  outline: none;
+}
+
+/* firefox */
+
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* CALENDARIO NATIVO */
+
+input[type="date"] {
+  color-scheme: light;
+}
+
+/* BOTON */
+
+.historial-clear-btn {
+  @apply h-14
+  px-6
+  rounded-2xl
+  bg-red-50
+  hover:bg-red-100
+  text-red-600
+  font-semibold
+  text-sm
+  flex
+  items-center
+  gap-2
+  transition-all
+  duration-300
+  hover:-translate-y-1;
+}
+
+/* ─────────────────────────────
+   TABLA
+───────────────────────────── */
+
+.historial-table-container {
+  @apply bg-white
+  rounded-[30px]
+  border
+  border-gray-200
+  shadow-sm
+  overflow-hidden
+  overflow-x-auto;
+}
+
+.historial-table {
+  @apply w-full
+  min-w-[1150px]
+  border-collapse;
+}
+
+/* HEADER TABLA */
+
+.historial-table thead {
+  @apply bg-[#F7FAF8]
+  border-b
+  border-gray-200;
+}
+
+.historial-table th {
+  @apply text-left
+  px-7
+  py-5
+  text-sm
+  font-bold
+  uppercase
+  tracking-wide
+  text-gray-500;
+}
+
+/* BODY */
+
+.historial-table tbody tr {
+  @apply border-b
+  border-gray-100
+  hover:bg-green-50/50
+  transition-all
+  duration-300;
+}
+
+.historial-table td {
+  @apply px-7
+  py-5
+  text-sm
+  text-gray-600;
+}
+
+/* DOCENTE */
+
+.historial-docente {
+  @apply flex
+  items-center
+  gap-3
+  font-semibold
+  text-gray-800;
+}
+
+.historial-avatar {
+  @apply w-11
+  h-11
+  rounded-2xl
+  bg-green-100
+  text-green-700
+  flex
+  items-center
+  justify-center;
+}
+
+/* INFO */
+
+.historial-info {
+  @apply flex
+  items-center
+  gap-2;
+}
+
+.historial-info svg {
+  @apply text-green-600;
+}
+
+/* BADGE */
+
+.historial-badge {
+  @apply inline-flex
+  items-center
+  gap-2
+  bg-green-50
+  text-green-700
+  px-4
+  py-2
+  rounded-full
+  text-xs
+  font-bold;
+}
+
+/* EMPTY */
+
+.historial-empty {
+  @apply text-center
+  py-20
+  text-gray-400
+  text-lg
+  font-medium;
+}
+
+/* SCROLL */
+
+.historial-table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.historial-table-container::-webkit-scrollbar-thumb {
+  @apply bg-green-200
+  rounded-full;
+}
+
+/* ─────────────────────────────
+   RESPONSIVE
+───────────────────────────── */
+
+@media (max-width: 768px) {
+
+  .historial-container {
+    @apply p-4;
+  }
+
+  .historial-header {
+    @apply flex-col
+    items-start
+    gap-4;
+  }
+
+  .historial-title {
+    @apply text-3xl;
+  }
+
+  .historial-filtros {
+    @apply p-4;
+  }
+
+  .historial-input-icon {
+    @apply min-w-full;
+  }
+
+  .historial-clear-btn {
+    @apply w-full
+    justify-center;
+  }
+
+}
